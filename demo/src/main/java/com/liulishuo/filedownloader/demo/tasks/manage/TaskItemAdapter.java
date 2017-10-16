@@ -53,14 +53,14 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TaskItemViewHolder>  {
         @Override
         protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.pending(task, soFarBytes, totalBytes);
-            final TaskItemViewHolder tag = checkCurrentHolder(task);
-            if (tag == null) {
+            final TaskItemViewHolder viewHolder = checkCurrentHolder(task);
+            if (viewHolder == null) {
                 return;
             }
 
-            tag.updateDownloading(FileDownloadStatus.pending, soFarBytes
+            viewHolder.updateDownloading(FileDownloadStatus.pending, soFarBytes
                     , totalBytes);
-            tag.taskStatusTv.setText(R.string.tasks_manager_demo_status_pending);
+            viewHolder.taskStatusTv.setText(R.string.tasks_manager_demo_status_pending);
         }
 
         @Override
