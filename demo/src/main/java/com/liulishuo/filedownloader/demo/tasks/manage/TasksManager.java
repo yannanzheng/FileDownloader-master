@@ -75,7 +75,7 @@ public class TasksManager {
         taskSparseArray.remove(id);
     }
 
-    public void updateViewHolder(final int id, final TasksManagerDemoActivity.TaskItemViewHolder holder) {
+    public void updateViewHolder(final int id, final TaskItemViewHolder holder) {
         final BaseDownloadTask task = taskSparseArray.get(id);
         if (task == null) {
             return;

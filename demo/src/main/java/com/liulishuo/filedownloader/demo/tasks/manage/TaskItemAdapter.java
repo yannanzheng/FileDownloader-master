@@ -36,13 +36,13 @@ import java.io.File;
  * Created by jfyang on 10/16/17.
  */
 
-public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivity.TaskItemViewHolder>  {
+public class TaskItemAdapter extends RecyclerView.Adapter<TaskItemViewHolder>  {
 
 
     public FileDownloadListener taskDownloadListener = new FileDownloadSampleListener() {
 
-        private TasksManagerDemoActivity.TaskItemViewHolder checkCurrentHolder(final BaseDownloadTask task) {
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = (TasksManagerDemoActivity.TaskItemViewHolder) task.getTag();
+        private TaskItemViewHolder checkCurrentHolder(final BaseDownloadTask task) {
+            final TaskItemViewHolder tag = (TaskItemViewHolder) task.getTag();
             if (tag.id != task.getId()) {
                 return null;
             }
@@ -53,7 +53,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.pending(task, soFarBytes, totalBytes);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -66,7 +66,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void started(BaseDownloadTask task) {
             super.started(task);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -77,7 +77,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
             super.connected(task, etag, isContinue, soFarBytes, totalBytes);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -90,7 +90,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.progress(task, soFarBytes, totalBytes);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -102,7 +102,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void error(BaseDownloadTask task, Throwable e) {
             super.error(task, e);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -115,7 +115,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void paused(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.paused(task, soFarBytes, totalBytes);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -128,7 +128,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
         @Override
         protected void completed(BaseDownloadTask task) {
             super.completed(task);
-            final TasksManagerDemoActivity.TaskItemViewHolder tag = checkCurrentHolder(task);
+            final TaskItemViewHolder tag = checkCurrentHolder(task);
             if (tag == null) {
                 return;
             }
@@ -144,7 +144,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
                 return;
             }
 
-            TasksManagerDemoActivity.TaskItemViewHolder holder = (TasksManagerDemoActivity.TaskItemViewHolder) v.getTag();
+            TaskItemViewHolder holder = (TaskItemViewHolder) v.getTag();
 
             CharSequence action = ((TextView) v).getText();
             if (action.equals(v.getResources().getString(R.string.pause))) {
@@ -176,8 +176,8 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
     };
 
     @Override
-    public TasksManagerDemoActivity.TaskItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        TasksManagerDemoActivity.TaskItemViewHolder holder = new TasksManagerDemoActivity.TaskItemViewHolder(
+    public TaskItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        TaskItemViewHolder holder = new TaskItemViewHolder(
                 LayoutInflater.from(
                         parent.getContext())
                         .inflate(R.layout.item_tasks_manager, parent, false));
@@ -187,7 +187,7 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TasksManagerDemoActivi
     }
 
     @Override
-    public void onBindViewHolder(TasksManagerDemoActivity.TaskItemViewHolder holder, int position) {
+    public void onBindViewHolder(TaskItemViewHolder holder, int position) {
         final TasksManagerModel model = TasksManager.getImpl().get(position);
 
         holder.update(model.getId(), position);
