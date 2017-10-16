@@ -57,8 +57,7 @@ public class TasksManager {
 
     private void initDemo() {
         if (modelList.size() <= 0) {
-            final int demoSize = Constant.BIG_FILE_URLS.length;
-            for (int i = 0; i < demoSize; i++) {
+            for (int i = 0; i < Constant.BIG_FILE_URLS.length; i++) {
                 final String url = Constant.BIG_FILE_URLS[i];
                 addTask(url);
             }
