@@ -42,12 +42,12 @@ public class TaskItemAdapter extends RecyclerView.Adapter<TaskItemViewHolder>  {
     public FileDownloadListener taskDownloadListener = new FileDownloadSampleListener() {
 
         private TaskItemViewHolder checkCurrentHolder(final BaseDownloadTask task) {
-            final TaskItemViewHolder tag = (TaskItemViewHolder) task.getTag();
-            if (tag.id != task.getId()) {
+            final TaskItemViewHolder viewHolder = (TaskItemViewHolder) task.getTag();
+            if (viewHolder.id != task.getId()) {
                 return null;
             }
 
-            return tag;
+            return viewHolder;
         }
 
         @Override
