@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickMultitask"
+        android:text="@string/multitask_test_title" />
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickSingle"
+        android:text="@string/single_task_test_title" />
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickHybridTest"
+        android:text="@string/hybrid_test_title" />
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickTasksManager"
+        android:text="@string/tasks_manager_demo_title" />
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickPerformance"
+        android:text="@string/performance_test_title" />
+
+    <Button
+        style="@style/DemoButton"
+        android:onClick="onClickNotification"
+        android:text="@string/notification_demo_title" />
+
+
+</LinearLayout>

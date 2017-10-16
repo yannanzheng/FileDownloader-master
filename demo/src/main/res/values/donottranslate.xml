@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015 LingoChamp Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_github">GITHUB</string>
+    <string name="app_github_url">https://github.com/lingochamp/FileDownloader</string>
+
+    <!-- multitask_test, callback -->
+    <string name="multitask_test_pending" formatted="false">pending: %d</string>
+    <string name="multitask_test_connected" formatted="false">connected: %d</string>
+    <string name="multitask_test_progress" formatted="false">progress: %d</string>
+    <string name="multitask_test_retry" formatted="false">retry: %d</string>
+    <string name="multitask_test_error" formatted="false">error: %d</string>
+    <string name="multitask_test_paused" formatted="false">paused: %d</string>
+    <string name="multitask_test_warn" formatted="false">warn: %d</string>
+    <string name="multitask_test_completed_reused" formatted="false">completed, reuse the existed file: %d</string>
+    <string name="multitask_test_completed_downloading" formatted="false">completed, downloading: %d</string>
+</resources>
